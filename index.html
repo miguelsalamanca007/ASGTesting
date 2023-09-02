@@ -64,6 +64,24 @@
     <div class="content">
         <h2>Welcome to the webpage!</h2>
         <p>If you are reading this, it means that the webpage is working!</p>
+        <div id="contenidoTxt"></div>
     </div>
+
+    <!-- Script para cargar el contenido del archivo .txt -->
+    <script>
+        // Función para cargar y mostrar el contenido del archivo .txt local
+        function cargarContenidoTxt() {
+            // Cargamos el contenido del archivo .txt
+            var archivoTxt = new XMLHttpRequest();
+            archivoTxt.open("GET", "content.txt", false);
+            archivoTxt.send(null);
+
+            // Insertamos el contenido en el elemento con el ID "contenidoTxt"
+            document.getElementById("contenidoTxt").innerHTML = archivoTxt.responseText;
+        }
+
+        // Llamamos a la función para cargar el contenido del archivo .txt local
+        cargarContenidoTxt();
+    </script>
 </body>
 </html>
